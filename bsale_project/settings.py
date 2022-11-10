@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'bsale_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
+        'HOST': 'localhost',
         'NAME': 'bsale_test',
         'USER':'bsale_test',
         'PASSWORD': 'bsale_test',
@@ -131,3 +131,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+"""'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
+        'NAME': 'bsale_test',
+        'USER':'bsale_test',
+        'PASSWORD': 'bsale_test',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode= 'STRICT_TRANS_TABLES'"
+        }
+    }"""
