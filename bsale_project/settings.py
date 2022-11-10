@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_api.app.ApiConfig',
+    'rest_api.apps.RestApiConfig',
     'rest_framework',
 ]
 
@@ -78,8 +78,15 @@ WSGI_APPLICATION = 'bsale_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
+        'NAME': 'bsale_test',
+        'USER':'bsale_test',
+        'PASSWORD': 'bsale_test',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode= 'STRICT_TRANS_TABLES'"
+        }
     }
 }
 
