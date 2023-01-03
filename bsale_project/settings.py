@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,13 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=#h^9^mx(4$9*$sg#)6bp=&1$u5mn7yxajfd5bve$*t12mbx@o'
+SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME: 
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -78,15 +82,12 @@ WSGI_APPLICATION = 'bsale_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
-        'NAME': 'bsale_test',
-        'USER':'bsale_test',
-        'PASSWORD': 'bsale_test',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode= 'STRICT_TRANS_TABLES'"
-        }
+        'NAME': 'bsale',
+        'USER':'bsale',
+        'PASSWORD': 'bs4l3501#',
+        'PORT': '5432',
     }
 }
 
