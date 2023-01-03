@@ -3,3 +3,7 @@ from .models import Product, Category
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Product)
+
+
+# skywalker
+# fallen_order501
