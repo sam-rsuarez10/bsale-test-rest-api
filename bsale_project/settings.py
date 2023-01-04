@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'bsale_project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://bsale:bs4l3501#@localhost:5432/bsale',
+        default='postgresql://bsale:bsale501@localhost:5432/bsale',
         conn_max_age=600
     )
 
